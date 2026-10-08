@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEXUS.GG · Eleve seu nível de jogo</title>
+  <meta name="description" content="Ferramentas digitais para gamers com entrega automática, suporte 24/7 e pagamento seguro.">
+  <meta name="theme-color" content="#07090D">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="/css/loja-ajustes.css">
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body data-pagina="inicio">
+  <div class="fundo-brilho" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container site-header__barra">
+      <a class="logo" href="/" aria-label="NEXUS.GG, início">
+        <span class="logo__marca"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12Z"/></svg></span>
+        NEXUS<span>.GG</span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="/#recursos" data-nav="recursos">Recursos</a>
+        <a href="/produtos" data-nav="produtos">Produtos</a>
+        <a href="/termos" data-nav="termos">Termos</a>
+      </nav>
+      <div class="site-header__acoes">
+        <div class="area-usuario" data-area-usuario>
+          <a class="btn btn--ghost btn--sm" href="/login">Entrar</a>
+          <a class="btn btn--primary btn--sm" href="/login?modo=criar">Registrar</a>
+        </div>
+        <button class="icon-btn" type="button" data-abrir-carrinho aria-label="Abrir carrinho" aria-controls="carrinho">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h10.9l2-8H6.2"/><circle cx="9.5" cy="19.5" r="1.3"/><circle cx="17.5" cy="19.5" r="1.3"/></svg>
+          <span data-carrinho-contador class="is-empty">0</span>
+        </button>
+        <button class="icon-btn menu-btn" type="button" id="btn-menu" aria-label="Menu" aria-expanded="false" aria-controls="menu-mobile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="menu-mobile" id="menu-mobile" hidden>
+      <div class="container">
+        <nav aria-label="Menu mobile">
+          <a href="/#recursos" data-nav="recursos">Recursos</a>
+          <a href="/produtos" data-nav="produtos">Produtos</a>
+          <a href="/termos" data-nav="termos">Termos</a>
+        </nav>
+        <div class="menu-mobile__acoes" data-area-usuario>
+          <a class="btn btn--soft" href="/login">Entrar</a>
+          <a class="btn btn--primary" href="/login?modo=criar">Registrar</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero ================================================================ -->
+    <section class="hero">
+      <div class="container hero__grade">
+        <div class="hero__texto">
+          <!-- Preenchido por loja-ajustes.js com o "Destaque da home" do painel -->
+          <a class="lj-destaque" href="/produtos" data-destaque-home hidden>
+            <span class="lj-destaque__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"/><path d="M7.5 7.5h.01"/></svg></span>
+            <span class="lj-destaque__txt" data-destaque-texto></span>
+            <svg class="lj-destaque__seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+          <span class="pill reveal">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5 20 5.5v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10v-6Z"/></svg>
+            Confiado por mais de 10 mil jogadores
+          </span>
+          <h1 class="hero__titulo reveal" data-delay="1">Eleve seu <span class="grad">nível de jogo</span></h1>
+          <p class="hero__sub reveal" data-delay="2">Ferramentas digitais para ganhar desempenho, conforto e controle. Seguras, sempre atualizadas e entregues na hora, direto no seu e-mail.</p>
+          <div class="hero__ctas reveal" data-delay="3">
+            <a class="btn btn--primary btn--lg" href="/produtos">
+              Ver produtos
+              <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </a>
+            <button class="btn btn--outline btn--lg" type="button" data-abrir-demo>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z"/></svg>
+              Ver demonstração
+            </button>
+          </div>
+          <dl class="hero__stats reveal" data-delay="4">
+            <div><dt>Usuários ativos</dt><dd>10K+</dd></div>
+            <div><dt>Tempo de atividade</dt><dd>99,9%</dd></div>
+            <div><dt>Suporte</dt><dd>24/7</dd></div>
+          </dl>
+        </div>
+
+        <!-- Prévia do app -->
+        <div class="hero__visual reveal" data-delay="2">
+          <div class="janela">
+            <div class="janela__barra">
+              <span></span><span></span><span></span>
+              <p>NEXUS · FPS Booster</p>
+            </div>
+            <div class="janela__corpo">
+              <ul class="janela__modulos">
+                <li class="is-on"><span>Modo desempenho</span><i></i></li>
+                <li class="is-on"><span>Limpeza em 2º plano</span><i></i></li>
+                <li class="is-on"><span>Prioridade de GPU</span><i></i></li>
+                <li><span>Modo streamer</span><i></i></li>
+              </ul>
+              <div class="janela__painel">
+                <p class="janela__rotulo">FPS médio</p>
+                <p class="janela__fps">240 <span>+38%</span></p>
+                <svg class="janela__grafico" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="area-grafico" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#2F7BFF" stop-opacity=".45"/>
+                      <stop offset="1" stop-color="#2F7BFF" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0 80 C30 78 40 70 60 72 S100 60 120 58 S160 40 180 44 S220 26 240 30 S280 14 300 12 V100 H0 Z" fill="url(#area-grafico)"/>
+                  <path class="janela__linha" d="M0 80 C30 78 40 70 60 72 S100 60 120 58 S160 40 180 44 S220 26 240 30 S280 14 300 12" fill="none" stroke="#60A5FA" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+                </svg>
+                <div class="janela__stats">
+                  <div><small>Latência</small><strong>4 ms</strong></div>
+                  <div><small>CPU</small><strong>31%</strong></div>
+                  <div><small>GPU</small><strong>64%</strong></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="janela__play" type="button" data-abrir-demo aria-label="Assistir demonstração">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z"/></svg>
+          </button>
+
+          <div class="flutuante flutuante--1" aria-hidden="true">
+            <span class="flutuante__icone flutuante__icone--ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+            <div><strong>Licença ativada</strong><small>entregue em 3 segundos</small></div>
+          </div>
+          <div class="flutuante flutuante--2" aria-hidden="true">
+            <span class="flutuante__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12Z"/></svg></span>
+            <div><strong>+38% FPS</strong><small>em média</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recursos ============================================================ -->
+    <section class="secao" id="recursos">
+      <div class="container">
+        <div class="secao__cab secao__cab--centro">
+          <span class="rotulo reveal">Recursos</span>
+          <h2 class="titulo-secao reveal" data-delay="1">Por que jogadores <span class="grad">escolhem a gente</span></h2>
+          <p class="sub-secao reveal" data-delay="2">Tudo pensado para você comprar em segundos e usar sem dor de cabeça.</p>
+        </div>
+        <div class="recursos" id="lista-recursos"></div>
+      </div>
+    </section>
+
+    <!-- Destaques =========================================================== -->
+    <section class="secao secao--escura" id="destaques">
+      <div class="container">
+        <div class="secao__cab">
+          <div>
+            <span class="rotulo reveal">Mais vendidos</span>
+            <h2 class="titulo-secao reveal" data-delay="1">Produtos em destaque</h2>
+          </div>
+          <a class="link-seta reveal" data-delay="2" href="/produtos">
+            Ver todos os produtos
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="grade" id="grade-destaques" aria-busy="true">
+          <div class="skeleton card-skeleton"></div>
+          <div class="skeleton card-skeleton"></div>
+          <div class="skeleton card-skeleton"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como funciona ======================================================= -->
+    <section class="secao">
+      <div class="container">
+        <div class="secao__cab secao__cab--centro">
+          <span class="rotulo reveal">Como funciona</span>
+          <h2 class="titulo-secao reveal" data-delay="1">Do clique ao jogo em <span class="grad">3 passos</span></h2>
+        </div>
+        <ol class="passos">
+          <li class="passo reveal" data-delay="1">
+            <span class="passo__num">01</span>
+            <h3>Escolha o produto</h3>
+            <p>Navegue pelo catálogo, toque no produto e escolha o plano ideal.</p>
+          </li>
+          <li class="passo reveal" data-delay="2">
+            <span class="passo__num">02</span>
+            <h3>Pague com segurança</h3>
+            <p>Pix, cartão ou boleto. Seus dados ficam protegidos do início ao fim.</p>
+          </li>
+          <li class="passo reveal" data-delay="3">
+            <span class="passo__num">03</span>
+            <h3>Receba na hora</h3>
+            <p>A chave de licença aparece na tela assim que o pedido é confirmado.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ ================================================================= -->
+    <section class="secao secao--escura" id="faq">
+      <div class="container faq">
+        <div class="faq__cab">
+          <span class="rotulo reveal">Dúvidas</span>
+          <h2 class="titulo-secao reveal" data-delay="1">Perguntas frequentes</h2>
+          <p class="sub-secao reveal" data-delay="2">Não achou sua resposta? Nosso suporte responde 24 horas por dia.</p>
+          <div class="lj-suporte lj-suporte--chips faq__suporte" data-suporte hidden></div>
+        </div>
+        <div class="faq__lista">
+          <details class="faq__item reveal">
+            <summary>Quanto tempo demora para receber?</summary>
+            <p>A entrega é automática: a chave aparece na tela logo após a confirmação do pedido.</p>
+          </details>
+          <details class="faq__item reveal" data-delay="1">
+            <summary>Quais formas de pagamento vocês aceitam?</summary>
+            <p>Pix, cartão de crédito e boleto. O Pix é confirmado em segundos.</p>
+          </details>
+          <details class="faq__item reveal" data-delay="2">
+            <summary>Posso trocar de plano depois?</summary>
+            <p>Sim. Fale com o suporte e ajustamos seu plano, descontando o valor que você já pagou.</p>
+          </details>
+          <details class="faq__item reveal" data-delay="3">
+            <summary>Tem reembolso?</summary>
+            <p>Se a chave não funcionar e o suporte não resolver, devolvemos o valor. Veja os detalhes nos Termos.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chamada final ======================================================= -->
+    <section class="secao">
+      <div class="container">
+        <div class="cta reveal">
+          <h2>Pronto para jogar no <span class="grad">próximo nível?</span></h2>
+          <p>Crie sua conta grátis e receba seu primeiro produto em segundos.</p>
+          <div class="cta__botoes">
+            <a class="btn btn--primary btn--lg" href="/produtos">Explorar produtos</a>
+            <a class="btn btn--soft btn--lg" href="/login?modo=criar">Criar conta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grade">
+        <div class="site-footer__marca">
+          <a class="logo" href="/"><span class="logo__marca"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12Z"/></svg></span>NEXUS<span>.GG</span></a>
+          <p>Ferramentas digitais para quem leva o jogo a sério. Entrega automática e suporte de verdade.</p>
+        </div>
+        <div class="site-footer__coluna">
+          <h4>Loja</h4>
+          <a href="/produtos">Produtos</a>
+          <a href="/#recursos">Recursos</a>
+          <a href="/#faq">Dúvidas</a>
+        </div>
+        <div class="site-footer__coluna">
+          <h4>Conta</h4>
+          <a href="/login">Entrar</a>
+          <a href="/login?modo=criar">Criar conta</a>
+        </div>
+        <div class="site-footer__coluna">
+          <h4>Legal</h4>
+          <a href="/termos">Termos de uso</a>
+          <a href="/termos#reembolso">Reembolso</a>
+          <a href="/termos#privacidade">Privacidade</a>
+        </div>
+        <div class="site-footer__coluna" data-suporte-bloco hidden>
+          <h4>Suporte</h4>
+          <div class="site-footer__links" data-suporte></div>
+        </div>
+      </div>
+      <div class="site-footer__base">
+        <p>© 2026 NEXUS.GG. Projeto de estudo.</p>
+        <div class="pagamentos"><span>Pix</span><span>Cartão</span><span>Boleto</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal da demonstração -->
+  <div class="modal" id="modal-demo" role="dialog" aria-modal="true" aria-label="Vídeo de demonstração" hidden>
+    <div class="modal__caixa">
+      <button class="icon-btn modal__fechar" type="button" data-fechar-demo aria-label="Fechar vídeo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <video id="video-demo" controls playsinline preload="none" src="/video/demo.mp4"></video>
+      <p class="modal__aviso" id="aviso-demo" hidden>Vídeo de demonstração indisponível no momento.</p>
+    </div>
+  </div>
+
+  <script src="/js/api.js" defer></script>
+  <script src="/js/loja-ajustes.js" defer></script>
+  <script src="/js/ui.js" defer></script>
+  <script src="/js/produto-modal.js" defer></script>
+  <script src="/js/cart.js" defer></script>
+  <script src="/js/home.js" defer></script>
+</body>
+</html>

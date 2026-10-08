@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minha conta · NEXUS.GG</title>
+  <meta name="description" content="Sua área na NEXUS.GG: pedidos, chaves de licença, favoritos, avaliações, perfil, segurança e preferências.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#07090D">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="/css/loja-ajustes.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/conta.css">
+</head>
+<body class="adm-body conta-body" data-pagina="conta">
+
+  <!-- ===================================================================== -->
+  <!-- Tela de acesso (mostrada quando não há sessão)                         -->
+  <!-- ===================================================================== -->
+  <div class="adm-restrito" id="restrito" hidden>
+    <div class="adm-restrito__caixa">
+      <span class="adm-restrito__icone" data-icone="usuario"></span>
+      <h1 class="adm-restrito__titulo" id="restrito-titulo">Entre na sua conta</h1>
+      <p class="adm-restrito__txt" id="restrito-texto">
+        Você precisa entrar para ver seus pedidos, chaves de licença e preferências.
+      </p>
+      <div class="adm-restrito__acoes" id="restrito-acoes">
+        <a class="btn btn--primary btn--block" href="/login?next=/conta">Entrar</a>
+        <a class="btn btn--soft btn--block" href="/login?modo=criar&amp;next=/conta">Criar conta</a>
+        <a class="btn btn--ghost btn--block" href="/">Voltar à loja</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- Painel do cliente                                                      -->
+  <!-- ===================================================================== -->
+  <div class="adm" id="painel" hidden>
+
+    <!-- Sidebar ---------------------------------------------------------- -->
+    <aside class="adm-sidebar" id="sidebar" aria-label="Navegação da conta">
+      <div class="adm-marca">
+        <span class="adm-marca__icone" data-icone="raio"></span>
+        NEXUS<span class="grad">.GG</span>
+        <span class="adm-marca__tag">Conta</span>
+      </div>
+
+      <nav class="adm-nav" id="nav">
+        <p class="adm-nav__grupo">Minha conta</p>
+        <a class="adm-nav__item" href="#/painel" data-view="painel">
+          <span class="adm-nav__icone" data-icone="painel"></span><span>Visão geral</span>
+        </a>
+        <a class="adm-nav__item" href="#/pedidos" data-view="pedidos">
+          <span class="adm-nav__icone" data-icone="pacote"></span><span>Meus pedidos</span>
+          <span class="adm-nav__contador" data-contador="pedidos" hidden></span>
+        </a>
+        <a class="adm-nav__item" href="#/licencas" data-view="licencas">
+          <span class="adm-nav__icone" data-icone="cadeado"></span><span>Minhas licenças</span>
+          <span class="adm-nav__contador" data-contador="licencas" hidden></span>
+        </a>
+        <a class="adm-nav__item" href="#/favoritos" data-view="favoritos">
+          <span class="adm-nav__icone" data-icone="coracao"></span><span>Favoritos</span>
+          <span class="adm-nav__contador" data-contador="favoritos" hidden></span>
+        </a>
+        <a class="adm-nav__item" href="#/avaliacoes" data-view="avaliacoes">
+          <span class="adm-nav__icone" data-icone="estrela"></span><span>Minhas avaliações</span>
+        </a>
+
+        <p class="adm-nav__grupo">Configurações</p>
+        <a class="adm-nav__item" href="#/perfil" data-view="perfil">
+          <span class="adm-nav__icone" data-icone="usuario"></span><span>Perfil</span>
+        </a>
+        <a class="adm-nav__item" href="#/seguranca" data-view="seguranca">
+          <span class="adm-nav__icone" data-icone="escudo"></span><span>Segurança</span>
+          <span class="adm-nav__contador" data-contador="sessoes" hidden></span>
+        </a>
+        <a class="adm-nav__item" href="#/preferencias" data-view="preferencias">
+          <span class="adm-nav__icone" data-icone="ajustes"></span><span>Preferências</span>
+        </a>
+        <a class="adm-nav__item" href="#/atividades" data-view="atividades">
+          <span class="adm-nav__icone" data-icone="atividade"></span><span>Atividades</span>
+          <span class="adm-nav__contador" data-contador="atividades" hidden></span>
+        </a>
+      </nav>
+
+      <div class="adm-sidebar__rodape">
+        <div class="adm-quem">
+          <span class="adm-quem__avatar" id="conta-avatar">?</span>
+          <span class="adm-quem__txt">
+            <span class="adm-quem__nome" id="conta-nome">—</span>
+            <span class="adm-quem__papel" id="conta-email">—</span>
+          </span>
+        </div>
+        <a class="btn btn--soft btn--sm btn--block" href="/">
+          <span data-icone="setaEsq"></span> Voltar à loja
+        </a>
+        <button class="btn btn--ghost btn--sm btn--block" type="button" id="conta-sair">
+          <span data-icone="sair"></span> Encerrar sessão
+        </button>
+      </div>
+    </aside>
+
+    <div class="adm-sidebar__fundo" id="sidebar-fundo" hidden></div>
+
+    <!-- Conteúdo --------------------------------------------------------- -->
+    <div class="adm-principal">
+      <header class="adm-topo">
+        <button class="icon-btn adm-topo__menu" type="button" id="btn-sidebar" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
+          <span data-icone="menu"></span>
+        </button>
+        <div class="adm-topo__txt">
+          <h1 class="adm-topo__titulo" id="titulo-view">Visão geral</h1>
+          <p class="adm-topo__sub" id="sub-view">Carregando…</p>
+        </div>
+        <div class="adm-topo__acoes">
+          <a class="btn btn--soft btn--sm" href="/admin" id="conta-admin-topo" hidden>
+            <span data-icone="escudo"></span> Painel administrativo
+          </a>
+          <button class="btn btn--soft btn--sm" type="button" id="btn-atualizar">
+            <span data-icone="atualizar"></span> Atualizar
+          </button>
+        </div>
+      </header>
+
+      <main class="adm-conteudo" id="conteudo" aria-live="polite"></main>
+    </div>
+  </div>
+
+  <script src="/js/api.js" defer></script>
+  <script src="/js/loja-ajustes.js" defer></script>
+  <script src="/js/admin-ui.js" defer></script>
+  <script src="/js/conta.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+# Dependencias
+node_modules/
+
+# Variaveis de ambiente (contem segredos: nunca versionar)
+.env
+.env.local
+.env.*.local
+
+# Banco de dados SQLite (dados locais de cada maquina)
+dados/
+*.db
+*.db-wal
+*.db-shm
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+
+# Build do front (gerado por `npm run build`, nunca versionado)
+dist/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp

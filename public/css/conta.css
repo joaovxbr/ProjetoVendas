@@ -1,0 +1,450 @@
+/* =============================================================================
+   conta.css — Painel do cliente (NEXUS.GG)
+
+   A área do cliente reaproveita de propósito os componentes do painel
+   administrativo (admin.css): a mesma grade sidebar + topo, os mesmos cartões,
+   selos, tabelas, estados, interruptores, modais e paginação. Assim as duas
+   telas ficam visualmente irmãs e não existem duas versões do mesmo botão.
+
+   Aqui só ficam as peças que são exclusivas do cliente: o cabeçalho de perfil,
+   os atalhos, a linha do tempo de atividades, o seletor de estrelas e os
+   cartões de pedido / favorito.
+
+   Carregue nesta ordem: base.css · app.css · admin.css · conta.css
+   ============================================================================= */
+
+body.conta-body {
+  background:
+    radial-gradient(1100px 560px at 100% -10%, rgba(47, 123, 255, .12), transparent 62%),
+    radial-gradient(760px 480px at -10% 112%, rgba(96, 165, 250, .07), transparent 60%),
+    var(--bg);
+}
+
+/* Cabeçalho de perfil ====================================================== */
+
+.conta-hero {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+}
+
+.conta-hero__avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, var(--accent), #1E5FD6);
+  box-shadow: var(--shadow-glow);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: #FFFFFF;
+}
+
+.conta-hero__txt { min-width: 0; }
+.conta-hero__nome { font-size: clamp(20px, 2.6vw, 25px); font-weight: 800; letter-spacing: -.02em; }
+.conta-hero__email { margin-top: 3px; font-size: 14px; color: var(--text-2); word-break: break-all; }
+
+.conta-hero__meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+.conta-hero__acoes { display: flex; gap: 10px; margin-left: auto; }
+
+@media (max-width: 640px) {
+  .conta-hero { flex-direction: column; align-items: flex-start; }
+  .conta-hero__acoes { width: 100%; margin-left: 0; }
+  .conta-hero__acoes .btn { flex: 1; }
+}
+
+/* Atalhos ================================================================== */
+
+.conta-atalhos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+}
+
+.conta-atalho {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--surface-2) 0%, var(--surface) 100%);
+  text-align: left;
+  transition: border-color var(--dur) var(--ease), transform .15s var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.conta-atalho:hover {
+  border-color: rgba(47, 123, 255, .35);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.conta-atalho__icone {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+  color: var(--accent-2);
+}
+
+.conta-atalho__icone svg { width: 21px; height: 21px; }
+.conta-atalho__txt { display: block; min-width: 0; }
+.conta-atalho__titulo { display: block; font-size: 14.5px; font-weight: 700; }
+.conta-atalho__dica { display: block; margin-top: 2px; font-size: 12.5px; color: var(--text-3); }
+
+/* Linha do tempo (atividades) ============================================== */
+
+.conta-tempo { display: flex; flex-direction: column; }
+
+.conta-tempo__item {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.conta-tempo__item:last-child { border-bottom: 0; }
+.conta-tempo__item:first-child { padding-top: 0; }
+
+.conta-tempo__marca {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--text-2);
+}
+
+.conta-tempo__marca svg { width: 18px; height: 18px; }
+
+.conta-tempo__marca[data-tom="ok"] { background: rgba(34, 197, 94, .12); color: #4ADE80; }
+.conta-tempo__marca[data-tom="info"] { background: var(--accent-soft); color: var(--accent-2); }
+.conta-tempo__marca[data-tom="aviso"] { background: rgba(251, 191, 36, .12); color: #FBBF24; }
+.conta-tempo__marca[data-tom="erro"] { background: rgba(240, 82, 82, .12); color: #F87171; }
+.conta-tempo__marca[data-tom="neutro"] { background: var(--surface-3); color: var(--text-3); }
+
+.conta-tempo__corpo { min-width: 0; flex: 1; }
+
+.conta-tempo__topo { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.conta-tempo__titulo { font-size: 14.5px; font-weight: 600; }
+.conta-tempo__quando { margin-left: auto; font-size: 12px; color: var(--text-3); white-space: nowrap; }
+.conta-tempo__desc { margin-top: 3px; font-size: 13px; color: var(--text-2); }
+.conta-tempo__meta { margin-top: 5px; font-size: 11.5px; color: var(--text-3); }
+
+/* Filtros por tipo (chips) */
+
+.conta-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.conta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  background: var(--bg-2);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.conta-chip svg { width: 15px; height: 15px; flex: none; opacity: .9; }
+.conta-chip:hover { color: var(--text); background: var(--surface-2); }
+.conta-chip.is-active { background: var(--accent-soft); border-color: rgba(47, 123, 255, .4); color: var(--text); }
+.conta-chip b { font-size: 11.5px; font-weight: 700; color: var(--text-3); }
+.conta-chip.is-active b { color: var(--accent-2); }
+
+/* Chaves de licença ======================================================== */
+
+.conta-chaves { display: flex; flex-direction: column; gap: 8px; }
+
+/* A chave se organiza em duas linhas (nome + selo / código + copiar) para
+   continuar legível tanto na coluna larga quanto na estreita. */
+.conta-chave {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg-2);
+}
+
+.conta-chave__topo { display: flex; align-items: flex-start; gap: 10px; }
+.conta-chave__topo .adm-selo { flex: none; margin-left: auto; }
+.conta-chave__txt { min-width: 0; flex: 1; }
+.conta-chave__nome { font-size: 13.5px; font-weight: 600; }
+.conta-chave__plano { margin-top: 2px; font-size: 12px; color: var(--text-3); }
+
+.conta-chave__codigo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px 7px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.conta-chave__codigo code {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-family: var(--mono);
+  font-size: 13.5px;
+  letter-spacing: .06em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.conta-chave__codigo .icon-btn { width: 32px; height: 32px; }
+.conta-chave__codigo .icon-btn svg { width: 17px; height: 17px; }
+
+/* Cartão de pedido ========================================================= */
+
+.conta-pedido {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--bg-2);
+  overflow: hidden;
+}
+
+.conta-pedido + .conta-pedido { margin-top: 14px; }
+
+.conta-pedido__cab {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-2);
+}
+
+.conta-pedido__num { font-family: var(--mono); font-size: 14px; font-weight: 700; letter-spacing: .04em; }
+.conta-pedido__data { font-size: 12.5px; color: var(--text-3); }
+.conta-pedido__total { margin-left: auto; font-size: 16px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.conta-pedido__itens { display: flex; flex-direction: column; }
+
+.conta-pedido__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.conta-pedido__item:last-child { border-bottom: 0; }
+.conta-pedido__item-txt { min-width: 0; flex: 1; }
+.conta-pedido__item-nome { font-size: 13.5px; font-weight: 600; }
+.conta-pedido__item-meta { font-size: 12px; color: var(--text-3); }
+.conta-pedido__valor { font-size: 13.5px; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.conta-pedido__chaves {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px dashed var(--line);
+}
+
+.conta-pedido__chave {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.conta-pedido__chave code { font-family: var(--mono); font-size: 12.5px; letter-spacing: .05em; }
+
+/* Seletor de estrelas (avaliação) ========================================= */
+
+.conta-nota { display: inline-flex; gap: 4px; }
+
+.conta-nota__btn {
+  padding: 2px;
+  border: 0;
+  background: transparent;
+  color: var(--text-3);
+  transition: color .15s var(--ease), transform .15s var(--ease);
+}
+
+.conta-nota__btn svg { width: 26px; height: 26px; }
+.conta-nota__btn:hover { transform: scale(1.12); }
+.conta-nota__btn.is-on { color: var(--star); }
+
+/* Avaliações já publicadas */
+
+.conta-avaliacao { display: flex; flex-direction: column; gap: 10px; }
+.conta-avaliacao__texto { font-size: 13.5px; line-height: 1.6; color: var(--text-2); }
+.conta-avaliacao__rodape { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+/* Favoritos ================================================================ */
+
+.conta-favs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 14px;
+}
+
+.conta-fav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--surface-2) 0%, var(--surface) 100%);
+  transition: border-color var(--dur) var(--ease);
+}
+
+.conta-fav:hover { border-color: var(--line-strong); }
+.conta-fav__topo { display: flex; align-items: flex-start; gap: 12px; }
+
+.conta-fav__icone {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  background: var(--surface-3);
+  color: var(--accent-2);
+}
+
+.conta-fav__icone svg { width: 24px; height: 24px; }
+.conta-fav__nome { font-size: 15px; font-weight: 700; }
+.conta-fav__cat { margin-top: 2px; font-size: 12.5px; color: var(--text-3); }
+.conta-fav__rodape { display: flex; align-items: center; gap: 10px; margin-top: auto; }
+.conta-fav__preco { font-size: 15px; font-weight: 800; }
+.conta-fav__rodape .btn { margin-left: auto; }
+
+/* Preferências ============================================================= */
+
+.conta-prefs { display: flex; flex-direction: column; gap: 12px; }
+
+.conta-pref-linha {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg-2);
+}
+
+.conta-pref-linha__txt { flex: 1; min-width: 0; }
+.conta-pref-linha__titulo { font-size: 14px; font-weight: 600; }
+.conta-pref-linha__dica { margin-top: 2px; font-size: 12.5px; color: var(--text-3); }
+.conta-pref-linha .adm-select { width: auto; min-width: 170px; }
+
+/* Rodapé de seção (botões de salvar) ====================================== */
+
+.conta-rodape { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+.conta-rodape__dica { font-size: 12.5px; color: var(--text-3); }
+
+/* Dispositivos / sessões =================================================== */
+
+.conta-dispositivo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.conta-dispositivo:last-child { border-bottom: 0; }
+
+.conta-dispositivo__icone {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+  color: var(--text-2);
+}
+
+.conta-dispositivo__icone svg { width: 20px; height: 20px; }
+.conta-dispositivo__txt { min-width: 0; flex: 1; }
+.conta-dispositivo__nome { font-size: 13.5px; font-weight: 600; }
+.conta-dispositivo__meta { font-size: 12px; color: var(--text-3); word-break: break-word; }
+
+/* Pedido pendente: instruções de pagamento e ações ------------------------- */
+
+.conta-pedido__pagamento {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid rgba(245, 165, 36, .35);
+  border-radius: var(--radius-sm);
+  background: rgba(245, 165, 36, .08);
+}
+
+.conta-pedido__pagamento > svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  color: #F5A524;
+}
+
+.conta-pedido__pagamento-txt {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.conta-pedido__pagamento-titulo {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.conta-pedido__pagamento-nota {
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.conta-pedido__codigo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+
+.conta-pedido__codigo code {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  word-break: break-all;
+}
+
+.conta-pedido__acoes {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}

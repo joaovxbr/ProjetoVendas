@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Termos de uso · NEXUS.GG</title>
+  <meta name="theme-color" content="#07090D">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="/css/loja-ajustes.css">
+</head>
+<body data-pagina="termos">
+  <div class="fundo-brilho" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container site-header__barra">
+      <a class="logo" href="/" aria-label="NEXUS.GG, início">
+        <span class="logo__marca"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12Z"/></svg></span>
+        NEXUS<span>.GG</span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="/#recursos" data-nav="recursos">Recursos</a>
+        <a href="/produtos" data-nav="produtos">Produtos</a>
+        <a href="/termos" data-nav="termos">Termos</a>
+      </nav>
+      <div class="site-header__acoes">
+        <div class="area-usuario" data-area-usuario>
+          <a class="btn btn--ghost btn--sm" href="/login">Entrar</a>
+          <a class="btn btn--primary btn--sm" href="/login?modo=criar">Registrar</a>
+        </div>
+        <button class="icon-btn" type="button" data-abrir-carrinho aria-label="Abrir carrinho" aria-controls="carrinho">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h10.9l2-8H6.2"/><circle cx="9.5" cy="19.5" r="1.3"/><circle cx="17.5" cy="19.5" r="1.3"/></svg>
+          <span data-carrinho-contador class="is-empty">0</span>
+        </button>
+        <button class="icon-btn menu-btn" type="button" id="btn-menu" aria-label="Menu" aria-expanded="false" aria-controls="menu-mobile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="menu-mobile" id="menu-mobile" hidden>
+      <div class="container">
+        <nav aria-label="Menu mobile">
+          <a href="/#recursos" data-nav="recursos">Recursos</a>
+          <a href="/produtos" data-nav="produtos">Produtos</a>
+          <a href="/termos" data-nav="termos">Termos</a>
+        </nav>
+        <div class="menu-mobile__acoes" data-area-usuario>
+          <a class="btn btn--soft" href="/login">Entrar</a>
+          <a class="btn btn--primary" href="/login?modo=criar">Registrar</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="banner">
+      <div class="container">
+        <h1>Termos de uso</h1>
+        <p>Última atualização: 30 de setembro de 2026. Modelo de exemplo para projeto de estudo: revise com um profissional antes de usar em produção.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <article class="doc">
+        <h2>1. Sobre o serviço</h2>
+        <p>A NEXUS.GG vende licenças de software digitais. Após a confirmação do pagamento, a chave de licença é exibida na tela e fica vinculada à sua conta.</p>
+
+        <h2>2. Conta</h2>
+        <ul>
+          <li>Você é responsável por manter sua senha em segurança.</li>
+          <li>Cada chave é de uso pessoal e não pode ser revendida.</li>
+          <li>Podemos suspender contas envolvidas em fraude ou estorno indevido.</li>
+        </ul>
+
+        <h2 id="reembolso">3. Reembolso</h2>
+        <p>Se a chave não funcionar e o suporte não conseguir resolver em até 72 horas, devolvemos o valor pago. Chaves já ativadas e usadas normalmente não são reembolsáveis.</p>
+
+        <h2>4. Planos e renovação</h2>
+        <p>Os planos por tempo (1, 7 ou 30 dias) começam a contar na ativação da chave e não são renovados automaticamente. O plano vitalício vale enquanto o produto for mantido.</p>
+
+        <h2 id="privacidade">5. Privacidade</h2>
+        <p>Guardamos apenas o necessário para entregar seus pedidos: nome, e-mail e histórico de compras. Não armazenamos dados de cartão. Você pode pedir a exclusão da sua conta a qualquer momento pelo suporte.</p>
+
+        <h2>6. Uso responsável</h2>
+        <p>Você concorda em usar os produtos respeitando as regras e os termos dos jogos e plataformas em que os utilizar.</p>
+
+        <h2>7. Contato</h2>
+        <p>Dúvidas sobre estes termos? Fale com o suporte, que atende 24 horas por dia, 7 dias por semana.</p>
+        <div class="lj-suporte lj-suporte--chips" data-suporte hidden></div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__base">
+        <p>© 2026 NEXUS.GG. Projeto de estudo.</p>
+        <div class="pagamentos"><span>Pix</span><span>Cartão</span><span>Boleto</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/api.js" defer></script>
+  <script src="/js/loja-ajustes.js" defer></script>
+  <script src="/js/ui.js" defer></script>
+  <script src="/js/cart.js" defer></script>
+</body>
+</html>

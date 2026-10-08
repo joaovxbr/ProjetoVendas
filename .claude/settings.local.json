@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($f = \"C:\\\\Users\\\\joaovx\\\\.claude\\\\projects\\\\C--Users-joaovx-Desktop-Projeto-Vendas\\\\c1f2a83a-9e4a-4264-a467-b45efd4e0fef.jsonl\"; if \\(Test-Path $f\\) { $i = Get-Item $f; \"EXISTS\"; \"Size: $\\($i.Length\\) bytes\"; \"Modified: $\\($i.LastWriteTime\\)\"; \"Lines: $\\(\\(Get-Content $f | Measure-Object -Line\\).Lines\\)\" } else { \"NOT FOUND: $f\" })"
+    ]
+  }
+}
